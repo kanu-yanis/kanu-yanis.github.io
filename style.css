@@ -8,7 +8,7 @@ body {
   font-family: Arial, sans-serif;
   font-size: 18px;
   line-height: 1.5;
-  color: #ccc;
+  color: #fff;
   background-color: #000;
   position: relative;
   z-index: 1;
@@ -23,6 +23,7 @@ main {
 h1, h2, h3 {
   margin-top: 3rem;
   margin-bottom: 2rem;
+  color: #fff;
 }
 
 h1 {
@@ -39,11 +40,12 @@ h3 {
 
 p {
   margin-bottom: 1.5rem;
+  color: #fff;
 }
 
 a {
-  color: #fff;
   text-decoration: none;
+  color: #fff;
   transition: color 0.2s ease;
 }
 
@@ -53,15 +55,10 @@ a:hover {
 
 #particles-js {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100vh;
-  z-index: -2;
+  height: 100%;
+  z-index: -10;
   background-color: #000;
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
 }
 
 nav {
@@ -88,7 +85,6 @@ nav li {
 
 nav a {
   color: #fff;
-  text-decoration: none;
   transition: color 0.2s ease;
 }
 
@@ -151,12 +147,6 @@ section {
 .dates-gpa-courses {
   font-size: 16px;
   color: #666;
-}
-
-.education-entry {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
 }
 
 .edu-left {
@@ -237,35 +227,6 @@ section {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.skill-category {
-  margin-bottom: 20px;
-}
-
-.skill-items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
-.skill-tag {
-  background-color: #444;
-  padding: 10px;
-  border-radius: 10px;
-  margin: 10px;
-  color: #fff;
-}
-
-#skills {
-  padding: 20px;
-  background-color: #f7f7f7;
-}
-
-.skills-grid {
-  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
 }
@@ -290,7 +251,7 @@ section {
 }
 
 .skill-tag {
-  background-color: #444;
+  background-color: #333;
   padding: 10px 20px;
   border-radius: 20px;
   font-size: 14px;
@@ -299,7 +260,7 @@ section {
 }
 
 .skill-tag:hover {
-  background-color: #555;
+  background-color: #444;
 }
 
 #skills h2 {
@@ -337,20 +298,16 @@ section {
   }
 
   .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 
   .education-entry {
     grid-template-columns: 1fr;
-    gap: 5px;
+    gap: 10px;
   }
 
   .institution, .degree-details, .dates-gpa-courses {
-    font-size: 14px;
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    font-size: 16px;
   }
 }
 
@@ -360,18 +317,14 @@ section {
   }
 
   .skills-grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
 
   .education-entry {
-    padding: 10px;
+    padding: 15px;
   }
 
   .institution, .degree-details, .dates-gpa-courses {
-    font-size: 12px;
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    font-size: 14px;
   }
 }
