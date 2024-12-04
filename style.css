@@ -1,0 +1,377 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #ccc;
+  background-color: #000;
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1, h2, h3 {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #ccc;
+}
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -2;
+  background-color: #000;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #ccc;
+}
+
+.name-and-pic-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.name-and-pic-container h1 {
+  margin-top: 0;
+}
+
+section {
+  margin-bottom: 4rem;
+}
+
+.education-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.education-entry {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+.education-entry:hover {
+  background-color: #f7f7f7;
+}
+
+.institution {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.degree-details {
+  font-size: 16px;
+  color: #666;
+}
+
+.dates-gpa-courses {
+  font-size: 16px;
+  color: #666;
+}
+
+.education-entry {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.edu-left {
+  width: 60%;
+}
+
+.edu-right {
+  width: 40%;
+}
+
+.experience-entry {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.experience-entry.card {
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.experience-entry.card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.role-date-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.role-date-line em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+.dates {
+  font-size: 14px;
+  color: #666;
+}
+
+.experience-entry.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experience-entry.card li {
+  margin-bottom: 10px;
+}
+
+.experience-entry.card li:last-child {
+  margin-bottom: 0;
+}
+
+#technical-experience h2 {
+  margin-top: 0;
+}
+
+.experience-entry.card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.experience-entry.card ul li {
+  font-size: 16px;
+  color: #333;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.skill-category {
+  margin-bottom: 20px;
+}
+
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.skill-tag {
+  background-color: #444;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  color: #fff;
+}
+
+#skills {
+  padding: 20px;
+  background-color: #f7f7f7;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.skill-category {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category h3 {
+  margin-top: 0;
+}
+
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.skill-tag {
+  background-color: #444;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+.skill-tag:hover {
+  background-color: #555;
+}
+
+#skills h2 {
+  margin-top: 0;
+  font-weight: bold;
+  font-size: 24px;
+  color: #333;
+}
+
+.skill-category h3 {
+  font-weight: bold;
+  font-size: 18px;
+  color: #666;
+}
+
+.skill-tag {
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 0 10px;
+  }
+
+  .name-and-pic-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-pic {
+    margin-bottom: 20px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .education-entry {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .institution, .degree-details, .dates-gpa-courses {
+    font-size: 14px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 0 5px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .education-entry {
+    padding: 10px;
+  }
+
+  .institution, .degree-details, .dates-gpa-courses {
+    font-size: 12px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
