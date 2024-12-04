@@ -1,80 +1,180 @@
-// Particles Background
-particlesJS.load('particles-js', 'particles.json', function() {
-  console.log('particles.js loaded - callback');
-});
-
-// Text Animations
-gsap.registerPlugin(ScrollTrigger);
-
-document.addEventListener("DOMContentLoaded", function() {
-  const mainContent = document.querySelectorAll("main > section, main > section > h2, main > section > h3, main > section > p, main > section > ul, main > section > div");
-  const educationEntries = document.querySelectorAll(".education-entry");
-  const experienceEntries = document.querySelectorAll(".experience-entry");
-  const skillsGrid = document.querySelector(".skills-grid");
-  const skillCategories = document.querySelectorAll(".skill-category");
-
-  if (mainContent.length > 0) {
-    gsap.to(mainContent, {
-      duration: 1,
-      opacity: 1,
-      y: -20,
-      stagger: 0.2,
-      ease: "power2.inOut"
-    });
-  } else {
-    console.warn("Main content elements not found.");
-  }
-
-  if (educationEntries.length > 0) {
-    educationEntries.forEach((entry, index) => {
-      gsap.to(entry, {
-        duration: 1,
-        opacity: 1,
-        y: -20,
-        delay: index * 0.2,
-        ease: "power2.inOut"
-      });
-    });
-  } else {
-    console.warn("Education entry elements not found.");
-  }
-
-  if (experienceEntries.length > 0) {
-    experienceEntries.forEach((entry, index) => {
-      gsap.to(entry, {
-        duration: 1,
-        opacity: 1,
-        y: -20,
-        delay: index * 0.2,
-        ease: "power2.inOut"
-      });
-    });
-  } else {
-    console.warn("Experience entry elements not found.");
-  }
-
-  if (skillsGrid) {
-    gsap.to(skillsGrid, {
-      duration: 1,
-      opacity: 1,
-      y: -20,
-      ease: "power2.inOut"
-    });
-  } else {
-    console.warn("Skills grid element not found.");
-  }
-
-  if (skillCategories.length > 0) {
-    skillCategories.forEach((category, index) => {
-      gsap.to(category, {
-        duration: 1,
-        opacity: 1,
-        y: -20,
-        delay: index * 0.2,
-        ease: "power2.inOut"
-      });
-    });
-  } else {
-    console.warn("Skill category elements not found.");
-  }
-});
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yanis MIRAOUI</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <nav>
+        <ul>
+            <li><a href="#about-me">About Me</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="about-me">
+            <div class="name-and-pic-container">
+                <img src="imgs/profile_pic.jpg" alt="Profile picture" class="profile-pic">
+                <h1>Yanis MIRAOUI</h1>
+            </div>
+            <p>Research-focused data scientist with experience in machine learning, data science, and software development.</p>
+        </section>
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-entry" data-institution="Stanford University">
+                <div class="edu-left">
+                    <p>Stanford University</p>
+                    <p>MS Statistics & Data Science</p>
+                </div>
+                <div class="edu-right">
+                    <p>September 2023 - June 2025</p>
+                </div>
+            </div>
+            <div class="education-entry" data-institution="Imperial College London & ETH Zürich">
+                <div class="edu-left">
+                    <p>Imperial College London & ETH Zürich</p>
+                    <p>MSci Mathematics</p>
+                </div>
+                <div class="edu-right">
+                    <p>First-Class Honors</p>
+                    <p>October 2019 - June 2023</p>
+                </div>
+            </div>
+        </section>
+        <section id="experience">
+            <h2>Technical Experience</h2>
+            <div class="experience-entry card">
+                <h3>Oracle</h3>
+                <div class="role-date-line">
+                    <em>Research Data Scientist Intern</em>
+                    <span class="dates">September 2024 - Present</span>
+                </div>
+                <ul>
+                    <li>Designed, implemented, and evaluated fully integrated LLM Agents at Oracle Labs, improving workflow automation for data scientists</li>
+                    <li>Collaborated with cross-functional teams to identify optimization opportunities, leveraging LLMs to improve agent accuracy</li>
+                </ul>
+            </div>
+            <div class="experience-entry card">
+                <h3>Stanford Computational Neuroscience Laboratory (CNS Lab)</h3>
+                <div class="role-date-line">
+                    <em>Research Assistant</em>
+                    <span class="dates">September 2023 – Present</span>
+                </div>
+                <ul>
+                    <li>Built state-of-the-art Graph Neural Network models to measure neural fMRI connectivity of different brain parcels</li>
+                    <li>Developed an optimal parcellation method of brain regions reducing computational complexity and processing time for a wide range of downstream tasks by 70%</li>
+                    <li>Published and presented my research findings on GNN models for neural connectivity at the MICCAI 2024 conference</li>
+                </ul>
+            </div>
+            <div class="experience-entry card">
+                <h3>Snowflake</h3>
+                <div class="role-date-line">
+                    <em>Applied Research Data Scientist Intern</em>
+                    <span class="dates">June 2024 - August 2024</span>
+                </div>
+                <ul>
+                    <li>Developed a RAG chatbot enhancing sales team efficiency by integrating knowledge from PDFs and web pages</li>
+                    <li>Built a multilingual translation tool leveraging LLMs to improve translation quality and reducing content translation time and cost</li>
+                    <li>Led the creation of a forecasting model accurately predicting Sales Qualified Opportunities (SQOs) with less than 12% error rate</li>
+                </ul>
+            </div>
+            <div class="experience-entry card">
+                <h3>Stanford University</h3>
+                <div class="role-date-line">
+                    <em>Course Assistant for CS 229, CS 225, MS&E 211DS & CS 236</em>
+                    <span class="dates">September 2023 – August 2024</span>
+                </div>
+                <ul>
+                    <li>Led engaging weekly discussion sections, answered questions, and provided guidance on course content</li>
+                    <li>Lectured classes on advanced techniques for applying optimization in Machine Learning and Data Science</li>
+                    <li>Designed and graded assignments and exams, as well as mentored students’ final projects</li>
+                </ul>
+            </div>
+            <div class="experience-entry card">
+                <h3>Egoli Media</h3>
+                <div class="role-date-line">
+                    <em>AI Researcher Intern</em>
+                    <span class="dates">August 2021 - September 2021</span>
+                </div>
+                <ul>
+                    <li>Created a machine learning face recognition application using OpenCV and Dlib that can accurately identify athletes regardless of the way their faces are posed or if they are wearing eyeglasses or sunglasses</li>
+                    <li>Built NLP models using Transformers and sentiment analysis to classify sports commentaries and extract insights of sports events — achieved generalization accuracy of 82% on data from diverse sources</li>
+                </ul>
+            </div>
+            <div class="experience-entry card">
+                <h3>Sopra Steria Group</h3>
+                <div class="role-date-line">
+                    <em>Machine Learning Engineer Intern</em>
+                    <span class="dates">June 2021 - August 2021</span>
+                </div>
+                <ul>
+                    <li>Led an entire machine learning project from conception to implementation for customer service for a French telecom company</li>
+                    <li>Developed a full machine learning CI/CD pipeline leveraging BERT to reduce the resolution time of support tickets by +60%</li>
+                </ul>
+            </div>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">NodeJS</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">LaTeX</span>
+                        <span class="skill-tag">Microsoft Office</span>
+                        <span class="skill-tag">G Suite</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Google Cloud Platform</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Microsoft Azure</span>
+                        <span class="skill-tag">Snowflake</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">French</span>
+                        <span class="skill-tag">Moroccan</span>
+                        <span class="skill-tag">English</span>
+                        <span class="skill-tag">German</span>
+                        <span class="skill-tag">Spanish</span>
+                        <span class="skill-tag">Arabic</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>Email: <a href="mailto:ymiraoui@stanford.edu">ymiraoui@stanford.edu</a></p>
+            <p>Phone: <a href="tel:+1 (650) 505 3509">+1 (650) 505 3509</a></p>
+            <p>LinkedIn: <a href="https://yanis.miraoui.com/">https://yanis.miraoui.com/</a></p>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('particles.json loaded...');
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
